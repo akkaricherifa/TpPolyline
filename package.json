@@ -1,0 +1,23 @@
+{
+  "name": "statecharts",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^4.4.5"
+  },
+  "dependencies": {
+    "@xstate/inspect": "^0.8.0",
+    "dayjs": "^1.11.10",
+    "konva": "^9.2.1",
+    "luxon": "^3.4.3",
+    "moment": "^2.29.4",
+    "xstate": "^4.38.2"
+  }
+}

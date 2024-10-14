@@ -1,0 +1,37 @@
+@startuml
+class Invoker {
+  +storeAndExecute(Command)
+}
+
+interface Command {
+  +execute()
+}
+
+class CompositeCommand implements Command {
+  +execute()
+  +addCommand(Command)
+  +removeCommand(Command)
+}
+note right of CompositeCommand::execute
+  Code: subCommands.forEach(c -> c.execute())
+end note
+
+
+class ConcreteCommand implements Command {
+  +execute()
+}
+
+class Receiver {
+  +action(Parameter)
+}
+
+class Parameter {
+}
+
+Invoker ..> Command : Uses >
+
+CompositeCommand  *-- "* subCommands" Command : Uses >
+ConcreteCommand --> "1 receiver" Receiver
+ConcreteCommand --> "1 parameter" Parameter
+Receiver ..> Parameter : Uses >
+@enduml

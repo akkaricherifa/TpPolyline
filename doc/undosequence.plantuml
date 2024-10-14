@@ -1,0 +1,19 @@
+@startuml
+participant Invoker
+participant UndoManager
+participant ConcreteCommand
+participant Receiver
+
+Invoker -> UndoManager : executeCommand(command)
+UndoManager -> ConcreteCommand : execute()
+ConcreteCommand -> Receiver : action(parameter)
+UndoManager -> UndoManager : push(command)
+UndoManager -> Invoker : 
+
+Invoker -> UndoManager : undo()
+UndoManager -> UndoManager : peek()
+UndoManager -> ConcreteCommand : undo()
+ConcreteCommand -> Receiver : restore(previousState)
+UndoManager -> UndoManager : pop()
+UndoManager -> Invoker : 
+@enduml

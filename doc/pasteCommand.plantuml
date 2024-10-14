@@ -1,0 +1,29 @@
+@startuml
+class Invoker {
+  +storeAndExecute(Command)
+}
+
+interface Command {
+  +execute()
+}
+
+class PasteCommand implements Command {
+  +execute()
+}
+
+note right of PasteCommand::execute
+  code: receiver.paste(parameter.contenu)
+end note
+
+class Document {
+  +paste(String)
+}
+
+class Clipboard {
+  +contenu: String
+}
+
+Invoker ..> Command : Uses >
+PasteCommand --> "1 receiver" Document
+Clipboard <-- PasteCommand : "1 parameter"
+@enduml

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/style.css">
+    <title>Lamp 💡</title>
+  </head>
+  <body>
+    <h1>On-Off Switch</h1>
+    <!-- On envoie un évenement au statechart-->
+    <button id="switch">Switch</button>
+    <!-- L'image  est calculée par le composant en fonction de l'état -->
+    <img id="lamp" alt="Light Bulb 💡" src="/light_off.gif" />
+    <code>
+      Allumée <strong id="counter">0</strong> fois
+    </code>
+    <iframe width="100%" height="500px" data-xstate></iframe>
+    <div>
+      Cet exemple démontre l'utilisation de la bibliothèque <a href="https://xstate.js.org/" target="_blank">xState</a> pour implémenter un statechart.
+    </div>
+    <script type="module" src="xStateLamp.js" defer></script>
+    <hr />
+    <a href="/">Retour à la page principale</a>
+  </body>
+</html>

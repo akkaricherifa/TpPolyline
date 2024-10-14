@@ -1,0 +1,18 @@
+@startuml
+
+
+state IDLE {
+
+}
+
+state DRAWING {
+
+}
+
+[*] --left-> IDLE : Start
+IDLE --> DRAWING : mouseclick / createLine()
+DRAWING --> DRAWING : mousemove / setLastPoint()
+DRAWING --> IDLE : mouseclick / saveLine()
+
+
+@enduml

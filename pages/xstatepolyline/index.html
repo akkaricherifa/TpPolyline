@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="/style.css">
+        <title>Polyline</title>
+    </head>
+
+    <body>
+        <h1>Exercice "Polyline"</h1>
+        <table style="width: 100%;">
+            <caption>Enoncé</caption>
+            <tr>
+                <td>
+                    <div id="container"></div>
+                </td>
+                <td>
+                    <div>Implémenter avec la bibliothèque xState un statechart
+                        qui trace une "polyline" (suite de points interconnectés)</div>
+                    <ul>
+                        <li><code>MOUSECLICK</code> ajoute un point (jusqu'au maximum MAX fixé)</li>
+                        <li><code>MOUSEMOVE</code> déplace le point provisoire</li>
+                        <li><code>Backspace</code> efface le dernier point ajouté (sauf le premier)</li>
+                        <li><code>Enter</code> enregistre la polyline (2 ≤ nombre de points ≤ MAX)</li>
+                        <li><code>Escape</code> abandonne le tracé de la polyline</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        <div>
+            Vous pouvez utiliser
+            <a href="https://stately.ai/registry/new?source=landing-page" target="_blank">l'éditeur xState en ligne</a>
+            et copier / coller le code généré dans votre projet ou installer
+            <a href="https://marketplace.visualstudio.com/items?itemName=statelyai.stately-vscode">l'extension xState
+                pour VSCode</a> pour éditer
+            le statechart directement dans VSCode.
+        </div>
+        <script type="module" src="xStatePolyline.js" defer></script>
+        <hr />
+        <a href="/">Retour à la page principale</a>
+    </body>
+
+</html>

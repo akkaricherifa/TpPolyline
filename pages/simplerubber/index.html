@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="/style.css" />
+        <title>Rubber Banding</title>
+    </head>
+    <body>
+        <h1>Rubber Banding</h1>
+        <table>            
+            <caption>
+                Implémentation avec la matrice Etats / Evénements
+            </caption>
+            <tr>
+                <td>
+                    <!-- La zone de dessin utilisée par Konva -->
+                    <div id="container"></div>
+                </td>
+                <td>
+                    <img
+                        src="//www.plantuml.com/plantuml/png/ROq_2y8m44Vt-nJdfa9mxo0LAb8e8ZeuY4Ee9nPp3UGkNSJlRlmJ476yn_kzAqLjqCWEHdeX9cGR100ILiAwQfPu0xXdK6qN-tgz-h33z8Z6E3ghcR_T0dVF7hmEasWU5CW-2hMkQwyumpQGLMgwdiOJoCuVd_r0IHVInefkVDVhzo2__QcB7N8ReAJ-5Daz0000"
+                        alt="statechart"
+                    />
+                    <br />
+                    <table border="1">
+                        <caption>
+                            Matrice Etats / Evénements
+                        </caption>
+                        <tr>
+                            <th>Etat / Evénement</th>
+                            <th>mouseclick</th>
+                            <th>mousemove</th>
+                        </tr>
+                        <tr>
+                            <th>IDLE</th>
+                            <td>createLine<br />➜ DRAWING</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>DRAWING</th>
+                            <td>saveline<br />➜ IDLE</td>
+                            <td>setLastPoint</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <div>
+            Ce code utilise la bibliothèque
+            <a href="https://konvajs.org/" target="_blank">Konva</a> pour
+            dessiner dans un canvas javascript. Il démontre l'implémetation d'un
+            statechart simple.
+        </div>
+        <script type="module" src="simpleRubberBanding.js" defer></script>
+        <hr />
+        <a href="/">Retour à la page principale</a>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+@startuml
+class Invoker {
+}
+
+class UndoManager {
+  +execute(Command)
+  +canUndo(): boolean
+  +canRedo(): boolean
+  +undo()
+  +redo()
+}
+
+interface Command {
+  +execute()
+  +undo()
+}
+
+class ConcreteCommand implements Command {
+  +execute()
+  +undo()
+}
+
+class Receiver {
+  +action(Parameter)
+  +restore(State)
+}
+
+class State {
+}
+
+class Parameter {
+}
+
+Invoker --> "1 manager" UndoManager
+Invoker ..> Command : Uses >
+UndoManager --> "*" Command : redoStack >
+UndoManager --> "*" Command : undoStack >
+ConcreteCommand --> "1 receiver" Receiver
+ConcreteCommand --> "1 previousState" State
+Receiver --> "1 currentState" State
+ConcreteCommand --> "1 parameter" Parameter
+
+@enduml

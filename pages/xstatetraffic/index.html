@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/style.css">
+    <title>French Traffic Lights 🚦</title>
+  </head>
+  <body>
+    <h1>French Traffic Lights 🚦</h1>
+    <img id="lights" alt="Traffic Light" src="/traffic-off.png" />
+    <hr />
+    <button id="turnOn">Turn On</button>
+    <button id="turnOff" disabled="disabled">Turn Off</button>
+    <button id="reset" disabled="disabled">Reset</button>
+    <button id="go" disabled="disabled">Go</button>
+
+    <iframe width="100%" height="500px" data-xstate></iframe>
+    <div>
+      Cet exemple démontre l'utilisation de la bibliothèque <a href="https://xstate.js.org/" target="_blank">xState</a> pour implémenter un statechart.
+    </div>
+    <script type="module" src="xStateTrafficLights.js" defer></script>
+    <hr />
+    <a href="/">Retour à la page principale</a>
+  </body>
+</html>

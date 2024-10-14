@@ -1,0 +1,25 @@
+@startuml
+class Invoker {
+  +execute(Command)
+}
+
+interface Command {
+  +execute()
+}
+
+class ConcreteCommand implements Command {
+  +execute()
+}
+
+class Receiver {
+  +action(Parameter)
+}
+
+class Parameter {
+}
+
+Invoker ..> Command : Uses >
+ConcreteCommand --> "1 receiver" Receiver
+ConcreteCommand --> "1 parameter" Parameter
+Receiver ..> Parameter : Uses >
+@enduml

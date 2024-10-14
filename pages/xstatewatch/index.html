@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/style.css">
+    <title>Digital watch</title>
+  </head>
+  <body>
+    <h1>Digital watch</h1>
+    <img src="/watch.jpg" alt="Digital watch" />
+    <img src="/watch_statechart.png" alt="StateChart" />
+    <h2 id="time"  style="display: block;">00:00:00</h2>
+    <h2 id="date" style="display: none;" >00/00/0000</h2>    
+    <h2 id="alarm" style="display: none;" >00:00:00</h2>
+    <h2 id="timer" style="display: none;" >00:00:00</h2>
+    <hr />
+    <button id="ESC">ESC</button>
+    <button id="SET">SET</button>
+    <button id="UP" >UP</button>
+    
+    <iframe width="100%" height="800px" data-xstate></iframe>
+    <div>
+      Cet exemple démontre l'utilisation de la bibliothèque <a href="https://xstate.js.org/" target="_blank">xState</a> pour implémenter un statechart.
+    </div>
+    <script type="module" src="xStateWatch.js" defer></script>
+    <hr />
+    <a href="/">Retour à la page principale</a>
+  </body>
+</html>
